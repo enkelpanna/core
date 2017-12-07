@@ -1,0 +1,26 @@
+{
+  "name": "@enkelpanna/core",
+  "version": "0.1.0",
+  "description": "Core libraries of Enkelpanna, the simple to use static site generator.",
+  "main": "build/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/enkelpanna/core.git"
+  },
+  "author": "Simon Mika (simon@mika.se)",
+  "license": "AGPL-3.0",
+  "bugs": {
+    "url": "https://github.com/enkelpanna/core/issues"
+  },
+  "homepage": "https://github.com/enkelpanna/core#readme",
+  "devDependencies": {
+    "tslint": "^5.8.0",
+    "typescript": "^2.6.2"
+  },
+  "dependencies": {
+    "@cogneco/mend": "^1.2.10"
+  }
+}
