@@ -3,8 +3,17 @@
   "version": "0.1.0",
   "description": "Core libraries of Enkelpanna, the simple to use static site generator.",
   "main": "build/index.js",
+  "types": "build/index.d.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "watch 'npm run build' source",
+    "prebuild": "tslint --config .vscode/tslint.json --project source/tsconfig.json",
+    "build": "tsc -p source",
+    "pretest": "npm run build",
+    "test": "node build/index.test.js",
+    "test:watch": "watch 'npm test' source",
+    "prepublish": "npm run build",
+    "release": "np",
+    "clean": "rm -rf build node_modules"
   },
   "repository": {
     "type": "git",
@@ -17,8 +26,11 @@
   },
   "homepage": "https://github.com/enkelpanna/core#readme",
   "devDependencies": {
+    "@types/node": "^7.0.12",
     "tslint": "^5.8.0",
-    "typescript": "^2.6.2"
+    "typescript": "^2.6.2",
+    "np": "^2.13.1",
+    "watch": "^1.0.2"
   },
   "dependencies": {
     "@cogneco/mend": "^1.2.10"
