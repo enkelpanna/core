@@ -1,6 +1,6 @@
-import * as FileSystem from "./FileSystem"
+import * as Filesystem from "./Filesystem"
 import * as SiteTree from "./SiteTree"
 
 export abstract class FileParser {
-	abstract parse(input: FileSystem.File): SiteTree.Item | undefined
+	abstract parse(input: Filesystem.File): SiteTree.Item | undefined
 }
