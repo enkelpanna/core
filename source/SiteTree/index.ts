@@ -1,7 +1,7 @@
 import { BinaryResource } from "./BinaryResource"
 import * as Block from "./Block"
 import * as Inline from "./Inline"
-import { Node } from "./Node"
+import { Item } from "./Item"
 import { Page } from "./Page"
 import { Resource } from "./Resource"
 import { Site } from "./Site"
@@ -11,7 +11,7 @@ export {
 	BinaryResource,
 	Block,
 	Inline,
-	Node,
+	Item,
 	Page,
 	Resource,
 	Site,

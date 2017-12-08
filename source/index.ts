@@ -1,13 +1,13 @@
 import { Generator } from "./Generator"
-import * as Input from "./Input"
-// import * as Output from "./Output"
-import { Parser } from "./Parser"
+import { Generators } from "./Generators"
+import * as FileSystem from "./FileSystem"
+import { FileParser } from "./FileParser"
 import * as SiteTree from "./SiteTree"
 
 export {
 	Generator,
-	Input,
-	// Output,
-	Parser,
+	Generators,
+	FileSystem,
+	FileParser,
 	SiteTree,
 }

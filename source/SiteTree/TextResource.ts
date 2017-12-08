@@ -1,7 +1,11 @@
+import { Error } from "@cogneco/mend"
 import { Resource } from "./Resource"
 
 export class TextResource extends Resource {
-	constructor(name: string, content: string) {
-		super(name)
+	constructor(readonly content: string, region: Error.Region) {
+		super(region)
+	}
+	toObject(): any & { type: string } {
+		return { ...super.toObject(), content: this.content }
 	}
 }

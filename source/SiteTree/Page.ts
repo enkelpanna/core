@@ -1,20 +1,22 @@
 import { Error } from "@cogneco/mend"
-import { Node } from "./Node"
+import { Item } from "./Item"
 import { Block } from "./Block/Block"
 import { Resource } from "./Resource"
 
-export class Page extends Node {
+export class Page extends Item {
 	constructor(
-		readonly title: string,
 		readonly meta: { [key: string]: any },
 		readonly content: Block[],
-		readonly pages: Page[],
-		readonly resources: Resource[],
+		readonly pages: { [name: string]: Page },
+		readonly resources: { [name: string]: Resource },
 		region: Error.Region,
 	) {
 		super(region)
 	}
 	toObject(): any & { type: string } {
 		return { type: "Page", content: JSON.stringify(this.content.map(element => element.toObject())) }
+	}
+	merge(other: Page): Page {
+		return new Page({ ...other.meta, ...this.meta }, this.content.concat(other.content), { ...other.pages, ...this.pages }, { ...other.resources, ...this.resources }, this.region.merge(other.region))
 	}
 }

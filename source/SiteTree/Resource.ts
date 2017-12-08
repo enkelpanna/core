@@ -1,3 +1,11 @@
-export abstract class Resource {
-	protected constructor(readonly name: string) { }
+import { Error } from "@cogneco/mend"
+import { Item } from "./Item"
+
+export abstract class Resource extends Item {
+	protected constructor(region: Error.Region) {
+		super(region)
+	}
+	toObject(): any & { type: string } {
+		return { type: "Resource" }
+	}
 }

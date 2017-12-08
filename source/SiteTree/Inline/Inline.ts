@@ -1,7 +1,7 @@
 import { Error } from "@cogneco/mend"
-import { Node } from "../Node"
+import { Item } from "../Item"
 
-export abstract class Inline extends Node {
+export abstract class Inline extends Item {
 	constructor(region: Error.Region) {
 		super(region)
 	}
