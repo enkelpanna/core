@@ -1,3 +1,4 @@
+export { BinaryFile } from "./BinaryFile"
 export { File } from "./File"
 export { Folder } from "./Folder"
 export { Node } from "./Node"

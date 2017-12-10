@@ -6,6 +6,9 @@ export class Generators extends Generator {
 	constructor(readonly generators: { [name: string]: Generator }) {
 		super()
 	}
+	get(name: string): Generator | undefined {
+		return this.generators[name]
+	}
 	generate(site: SiteTree.Site): Filesystem.Folder {
 		const result: { [name: string]: Filesystem.Node } = {}
 		for (const name in this.generators)
