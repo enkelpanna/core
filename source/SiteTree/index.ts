@@ -4,7 +4,6 @@ import * as Inline from "./Inline"
 import { Item } from "./Item"
 import { Page } from "./Page"
 import { Resource } from "./Resource"
-import { Site } from "./Site"
 import { TextResource } from "./TextResource"
 
 export {
@@ -14,6 +13,5 @@ export {
 	Item,
 	Page,
 	Resource,
-	Site,
 	TextResource,
 }

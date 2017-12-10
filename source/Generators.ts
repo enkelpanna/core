@@ -1,5 +1,5 @@
 import * as Filesystem from "./Filesystem"
-import * as SiteTree from "./SiteTree"
+import { Site } from "./Site"
 import { Generator } from "./Generator"
 
 export class Generators extends Generator {
@@ -9,11 +9,11 @@ export class Generators extends Generator {
 	get(name: string): Generator | undefined {
 		return this.generators[name]
 	}
-	generate(site: SiteTree.Site): Filesystem.Folder {
+	async generate(site: Site): Promise<Filesystem.Folder> {
 		const result: { [name: string]: Filesystem.Node } = {}
 		for (const name in this.generators)
 			if (this.generators.hasOwnProperty(name))
-				result[name] = this.generators[name].generate(site)
+				result[name] = await this.generators[name].generate(site)
 		return new Filesystem.Folder(() => Promise.resolve(result))
 	}
 }

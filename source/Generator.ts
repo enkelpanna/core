@@ -1,6 +1,6 @@
 import * as Filesystem from "./Filesystem"
-import * as SiteTree from "./SiteTree"
+import { Site } from "./Site"
 
 export abstract class Generator {
-	abstract generate(site: SiteTree.Site): Filesystem.Folder
+	abstract generate(site: Site): Promise<Filesystem.Folder>
 }

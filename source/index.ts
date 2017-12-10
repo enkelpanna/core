@@ -4,6 +4,7 @@ import * as Filesystem from "./Filesystem"
 import { Parser } from "./Parser"
 import { FileParser } from "./FileParser"
 import * as SiteTree from "./SiteTree"
+import { Site } from "./Site"
 
 export {
 	Generator,
@@ -12,4 +13,5 @@ export {
 	FileParser,
 	Parser,
 	SiteTree,
+	Site,
 }
