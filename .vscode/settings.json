@@ -18,8 +18,8 @@
 	"tslint.enable": true,
 	"tslint.run": "onType",
 	"tslint.configFile": "./.vscode/tslint.json",
-	"licenser.license": "MIT",
-	"licenser.projectName": "Mend",
+	"licenser.license": "AGPLv3",
+	"licenser.projectName": "Enkelpanna, Core",
 	"licenser.author": "Simon Mika <simon@mika.se>",
 	"licenser.useSingleLineStyle": true
 }
