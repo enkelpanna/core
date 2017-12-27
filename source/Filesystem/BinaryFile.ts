@@ -1,3 +1,4 @@
+import { Uri } from "@cogneco/mend"
 import { File } from "./File"
 
 export class BinaryFile extends File {
@@ -7,7 +8,7 @@ export class BinaryFile extends File {
 			this.contentCache = this.getContent()
 		return this.contentCache
 	}
-	constructor(private getContent: () => Promise<Uint8Array>) {
-		super()
+	constructor(private getContent: () => Promise<Uint8Array>, locator?: Uri.Locator) {
+		super(locator)
 	}
 }

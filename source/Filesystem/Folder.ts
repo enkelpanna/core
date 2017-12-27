@@ -1,3 +1,4 @@
+import { Uri } from "@cogneco/mend"
 import { Node } from "./Node"
 
 export class Folder extends Node {
@@ -7,7 +8,7 @@ export class Folder extends Node {
 			this.childrenCache = this.getChildren()
 		return this.childrenCache
 	}
-	constructor(private getChildren: () => Promise<{ [name: string]: Node }>) {
-		super()
+	constructor(private getChildren: () => Promise<{ [name: string]: Node }>, locator?: Uri.Locator) {
+		super(locator)
 	}
 }

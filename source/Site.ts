@@ -16,6 +16,7 @@ export class Site {
 		readonly configuration: ISiteConfiguration,
 		readonly parser: Parser,
 		readonly generator: Generator,
+		readonly handler: Error.Handler = new Error.ConsoleHandler(),
 	)
 	{ }
 	async load(folder: Filesystem.Folder): Promise<void> {
@@ -35,7 +36,7 @@ export class Site {
 					if (item instanceof SiteTree.Page)
 						pages = { name: item, ...pages }
 				} else if (node instanceof Filesystem.File) {
-					const item = this.parser.parse(node)
+					const item = this.parser.parse(node, this.handler)
 					if (item instanceof SiteTree.Page) {
 						meta = { ...item.meta, ...meta }
 						content = [ ...content, ...item.content ]
