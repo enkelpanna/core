@@ -6,6 +6,6 @@ export abstract class ContentInline extends Inline {
 		super(region)
 	}
 	toObject(): any & { type: string } {
-		return { "content": this.content.map(c => c.toObject()) }
+		return { ...super.toObject(), "content": this.content.map(c => c.toObject()) }
 	}
 }

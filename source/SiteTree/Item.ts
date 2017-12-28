@@ -1,7 +1,10 @@
 import { Error } from "@cogneco/mend"
 
 export abstract class Item {
+	abstract readonly type: string
 	constructor(readonly region: Error.Region) {
 	}
-	abstract toObject(): any & { type: string }
+	toObject(): any & { type: string } {
+		return { type: this.type }
+	}
 }

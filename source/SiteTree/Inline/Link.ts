@@ -3,10 +3,11 @@ import { ContentInline } from "./ContentInline"
 import { Inline } from "./Inline"
 
 export class Link extends ContentInline {
+	readonly type = "link"
 	constructor(readonly target: string, content: Inline[], region: Error.Region) {
 		super(content, region)
 	}
 	toObject(): any & { type: string } {
-		return { ...super.toObject(), type: "Link", target: this.target }
+		return { ...super.toObject(), target: this.target }
 	}
 }

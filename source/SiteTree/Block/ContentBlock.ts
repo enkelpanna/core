@@ -7,6 +7,6 @@ export abstract class ContentBlock<T extends Item> extends Block {
 		super(region)
 	}
 	toObject(): any & { type: string } {
-		return { content: this.content.map(c => c.toObject()) }
+		return { ...super.toObject(), content: this.content.map(c => c.toObject()) }
 	}
 }

@@ -2,10 +2,8 @@ import { ContentBlock } from "./ContentBlock"
 import { ListItem } from "./ListItem"
 
 export class OrderedList extends ContentBlock<ListItem> {
+	readonly type = "ordered_list"
 	constructor(content: ListItem[]) {
 		super(content, content.map(c => c.region).reduce((left, right) => left.merge(right)))
-	}
-	toObject(): any & { type: string } {
-		return { ...super.toObject(), type: "OrderedList" }
 	}
 }

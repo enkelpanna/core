@@ -5,7 +5,4 @@ export abstract class Resource extends Item {
 	protected constructor(region: Error.Region) {
 		super(region)
 	}
-	toObject(): any & { type: string } {
-		return { type: "Resource" }
-	}
 }
