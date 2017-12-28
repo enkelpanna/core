@@ -23,6 +23,6 @@ export class Video extends ContentBlock<Inline> {
 		super(content, region)
 	}
 	toObject(): any & { type: string } {
-		return { ...super.toObject(), type: "Video", source: this.source, classes: JSON.stringify(this.classes) }
+		return { ...super.toObject(), type: "Video", source: this.source, classes: this.classes }
 	}
 }

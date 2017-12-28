@@ -7,6 +7,6 @@ export class Figure extends ContentBlock<Inline> {
 		super(content, region)
 	}
 	toObject(): any & { type: string } {
-		return { ...super.toObject(), type: "Figure", source: this.source, classes: JSON.stringify(this.classes) }
+		return { ...super.toObject(), type: "Figure", source: this.source, classes: this.classes }
 	}
 }

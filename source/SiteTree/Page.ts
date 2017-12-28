@@ -14,7 +14,7 @@ export class Page extends Item {
 		super(region)
 	}
 	toObject(): any & { type: string } {
-		return { type: "Page", content: JSON.stringify(this.content.map(element => element.toObject())) }
+		return { type: "Page", content: this.content.map(element => element.toObject()) }
 	}
 	merge(other: Page): Page {
 		return new Page({ ...other.meta, ...this.meta }, this.content.concat(other.content), { ...other.pages, ...this.pages }, { ...other.resources, ...this.resources }, this.region.merge(other.region))
