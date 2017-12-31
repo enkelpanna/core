@@ -9,11 +9,11 @@ export class Generators extends Generator {
 	get(name: string): Generator | undefined {
 		return this.generators[name]
 	}
-	async generate(site: Site): Promise<Filesystem.Folder> {
+	generate(site: Site): Filesystem.Folder {
 		const result: { [name: string]: Filesystem.Node } = {}
 		for (const name in this.generators)
 			if (this.generators.hasOwnProperty(name))
-				result[name] = await this.generators[name].generate(site)
+				result[name] = this.generators[name].generate(site)
 		return new Filesystem.Folder(() => Promise.resolve(result))
 	}
 }

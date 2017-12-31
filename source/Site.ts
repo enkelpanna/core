@@ -50,7 +50,7 @@ export class Site {
 		}
 		return new SiteTree.Page(meta, content, pages, resources, region || new Error.Region(""))
 	}
-	generate(name?: string): Promise<Filesystem.Folder> {
+	generate(name?: string): Filesystem.Folder {
 		return (name && this.generator instanceof Generators && this.generator.get(name) || this.generator).generate(this)
 	}
 	static async create(configuration: ISiteConfiguration, fetchParser: (locator: string) => Promise<Parser>, fetchGenerator: (locator: string) => Promise<Generator>): Promise<Site> {
