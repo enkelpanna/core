@@ -1,6 +1,7 @@
 import { Generator } from "./Generator"
 import { Generators } from "./Generators"
 import * as Filesystem from "./Filesystem"
+import { ISiteConfiguration } from "./ISiteConfiguration"
 import { Parser } from "./Parser"
 import { Parsers } from "./Parsers"
 import * as SiteTree from "./SiteTree"
@@ -10,6 +11,7 @@ export {
 	Generator,
 	Generators,
 	Filesystem,
+	ISiteConfiguration,
 	Parser,
 	Parsers,
 	SiteTree,
