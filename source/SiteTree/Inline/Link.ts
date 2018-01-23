@@ -3,7 +3,7 @@ import { ContentInline } from "./ContentInline"
 import { Inline } from "./Inline"
 
 export class Link extends ContentInline {
-	readonly type = "link"
+	readonly type = "inline.link"
 	constructor(readonly target: string, content: Inline[], region: Error.Region) {
 		super(content, region)
 	}

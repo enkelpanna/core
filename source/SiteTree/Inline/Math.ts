@@ -2,7 +2,7 @@ import { Error } from "@cogneco/mend"
 import { Inline } from "./Inline"
 
 export class Math extends Inline {
-	readonly type: string
+	readonly type = "inline.math"
 	constructor(readonly content: string, region: Error.Region) {
 		super(region)
 	}

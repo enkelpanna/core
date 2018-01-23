@@ -2,7 +2,7 @@ import { Error } from "@cogneco/mend"
 import { Block } from "./Block"
 
 export class EmptyLine extends Block {
-	readonly type = "empty_line"
+	readonly type = "block.emptyLine"
 	constructor(region: Error.Region) {
 		super(region)
 	}

@@ -2,7 +2,7 @@ import { Error } from "@cogneco/mend"
 import { Resource } from "./Resource"
 
 export class BinaryResource extends Resource {
-	readonly type = "binary_resource"
+	readonly type = "resource.binary"
 	constructor(readonly content: Uint8Array, region: Error.Region) {
 		super(region)
 	}

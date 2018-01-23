@@ -2,7 +2,7 @@ import { Error } from "@cogneco/mend"
 import { Resource } from "./Resource"
 
 export class TextResource extends Resource {
-	readonly type = "text_resource"
+	readonly type = "resource.text"
 	constructor(readonly content: string, region: Error.Region) {
 		super(region)
 	}
