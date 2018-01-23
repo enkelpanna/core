@@ -14,6 +14,7 @@ export class Page extends Item {
 	) {
 		super(region)
 	}
+	get<T>(key: string): T | undefined { return this.meta[key] }
 	toObject(): any & { type: string } {
 		return { ...super.toObject(), content: this.content.map(element => element.toObject()) }
 	}
